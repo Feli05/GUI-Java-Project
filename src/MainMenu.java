@@ -1,10 +1,6 @@
 import java.awt.*;
-<<<<<<< Updated upstream
-import javax.swing.*;
-=======
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 public class MainMenu {
     // frames and panels
