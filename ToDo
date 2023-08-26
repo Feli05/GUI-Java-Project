@@ -1,4 +1,4 @@
 TODO LIST:
-- Make a function that clears the table
-- Edit the frame and fit a score variable for both players
-- New button that controls the clear table
+- Create the functionality for the 2048 game
+- Modify the UI of the main menu so it looks better
+- Learn more about swift components and methods
