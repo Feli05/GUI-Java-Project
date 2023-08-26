@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class TicTacToe {
@@ -64,33 +63,31 @@ public class TicTacToe {
                 tile.setFocusable(false);
 
                 // action listener checks for users input
-                tile.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
+                tile.addActionListener(e -> {
 
-                        // check if the game is over
-                        if(gameOver){
-                            return;
-                        }
+                    // check if the game is over
+                    if(gameOver){
+                        return;
+                    }
 
-                        JButton tile = (JButton) e.getSource();
+                    JButton tile1 = (JButton) e.getSource();
 
-                        // if the tile is empty
-                        if(tile.getText().isEmpty()){
-                            tile.setText(currPlayer);
-                            total_turns++;
-                            // check if there is a winner after every turn
-                            checkWinner();
-                            // if the game is over the user is not allowed to input again
-                            if(!gameOver){
-                                // switch the current player by checking last player
-                                if(currPlayer.equals(playerX)){
-                                    currPlayer = playerO;
-                                } else {
-                                    currPlayer = playerX;
-                                }
-                                // change the *title* text to show the current players turn
-                                textLabel.setText(currPlayer + "'s turn.");
+                    // if the tile is empty
+                    if(tile1.getText().isEmpty()){
+                        tile1.setText(currPlayer);
+                        total_turns++;
+                        // check if there is a winner after every turn
+                        checkWinner();
+                        // if the game is over the user is not allowed to input again
+                        if(!gameOver){
+                            // switch the current player by checking last player
+                            if(currPlayer.equals(playerX)){
+                                currPlayer = playerO;
+                            } else {
+                                currPlayer = playerX;
                             }
+                            // change the *title* text to show the current players turn
+                            textLabel.setText(currPlayer + "'s turn.");
                         }
                     }
                 });
