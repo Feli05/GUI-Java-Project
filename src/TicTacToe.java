@@ -98,7 +98,7 @@ public class TicTacToe {
         }
     }
 
-    void checkWinner(){
+    private void checkWinner(){
         // check for win conditions in every row (horizontally)
         for(int i = 0; i < 3; i++){
             if(board[i][0].getText().equals(board[i][1].getText()) &&
@@ -155,13 +155,13 @@ public class TicTacToe {
         }
     }
 
-    void setWinner(JButton tile){
+    private void setWinner(JButton tile){
         tile.setBackground(Color.gray);
         tile.setForeground(Color.green);
         textLabel.setText(tile.getText() + " is the winner!");
     }
 
-    void setTie(JButton tile){
+    private void setTie(JButton tile){
         tile.setBackground(Color.gray);
         tile.setForeground(Color.pink);
         textLabel.setText("There is a tie!");

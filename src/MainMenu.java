@@ -1,5 +1,11 @@
 import java.awt.*;
+<<<<<<< Updated upstream
 import javax.swing.*;
+=======
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.Border;
+>>>>>>> Stashed changes
 
 public class MainMenu {
     // frames and panels
@@ -41,10 +47,16 @@ public class MainMenu {
         textPanel.add(textLabel);
         frame.add(textPanel, BorderLayout.NORTH);
 
+<<<<<<< Updated upstream
         // configure the button panel to match text panel
         buttonPanel.setLayout(new GridBagLayout());
         buttonPanel.setBackground(Color.gray);
 
+=======
+        // configure the buttons
+        buttonPanel.setLayout(new GridBagLayout());
+        buttonPanel.setBackground(Color.gray);
+>>>>>>> Stashed changes
         // config for button 1 (TicTacToe button)
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -52,6 +64,7 @@ public class MainMenu {
         constraints.weighty = 1;
         constraints.ipadx = 100;
         constraints.ipady = 100;
+<<<<<<< Updated upstream
         TICTACTOE_Button.setBackground(Color.darkGray);
         TICTACTOE_Button.setForeground(Color.white);
         buttonPanel.add(TICTACTOE_Button, constraints);
@@ -63,6 +76,16 @@ public class MainMenu {
         GAME2048_Button.setForeground(Color.white);
         buttonPanel.add(GAME2048_Button, constraints);
         frame.add(buttonPanel);
+=======
+        TICTACTOE_Button.setBackground(Color.green);
+        buttonPanel.add(TICTACTOE_Button, constraints);
+        // config for button 2 (2048 game button)
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        GAME2048_Button.setBackground(Color.green);
+        buttonPanel.add(GAME2048_Button, constraints);
+        frame.add(buttonPanel, BorderLayout.CENTER);
+>>>>>>> Stashed changes
 
         // use ActionListener to record when the user clicks the button then call the game
         TICTACTOE_Button.addActionListener(e -> openTicTacToe());
@@ -77,7 +100,18 @@ public class MainMenu {
     }
 
     private void openGame2048() {
+<<<<<<< Updated upstream
         // call the 2048 game when it's ready
     }
 
 }
+=======
+        // call the 2048 class
+    }
+
+}
+
+
+
+
+>>>>>>> Stashed changes
