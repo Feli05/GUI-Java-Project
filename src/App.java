@@ -1,5 +1,9 @@
+import javax.swing.*;
+
 public class App {
     public static void main(String[] args) {
-        MainMenu app = new MainMenu();
+        JFrame GUI_App = new JFrame();
+
+        new MainMenu(GUI_App);
     }
 }
