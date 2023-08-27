@@ -7,29 +7,30 @@ public class TicTacToe {
     int boardHeight = 650; // 50px for the text panel at the top
 
     // main frame, panels and labels
-    JFrame frame = new JFrame("Tic Tac Toe!");
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
     JPanel boardPanel = new JPanel();
 
     // buttons
     JButton[][] board = new JButton[3][3];
-    String playerX = "X";
-    String playerO = "O";
-    String currPlayer = playerX;
+    JButton MAINMENU_Button =  new JButton();
 
     // game logic
     boolean gameOver = false;
     int total_turns = 0;
+    String playerX = "X";
+    String playerO = "O";
+    String currPlayer = playerX;
 
-    TicTacToe(){
+    TicTacToe(JFrame frame){
         // configure the frame that shows all the panels
-        frame.setVisible(true);
+        frame.setTitle("Tic Tac Toe!");
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
+        frame.setVisible(true);
 
         // configure the text and background for the text label (title of the game)
         textLabel.setBackground(Color.darkGray);
@@ -39,9 +40,18 @@ public class TicTacToe {
         textLabel.setText("Tic Tac Toe");
         textLabel.setOpaque(true);
 
+        // configure the 'go back to main menu' button that is inside the text panel
+        MAINMENU_Button.setBackground(new Color(0xF9F6F0));
+        MAINMENU_Button.setForeground(new Color(0x493E2D));
+        MAINMENU_Button.setFont(new Font("Montserrat Black", Font.PLAIN, 18));
+        MAINMENU_Button.setText("Go Back");
+        MAINMENU_Button.setFocusable(false);
+        MAINMENU_Button.setBorder(BorderFactory.createRaisedBevelBorder());
+
         // configure the position of the text panel
         textPanel.setLayout(new BorderLayout());
-        textPanel.add(textLabel);
+        textPanel.add(textLabel, BorderLayout.CENTER);
+        textPanel.add(MAINMENU_Button, BorderLayout.EAST);
         frame.add(textPanel, BorderLayout.NORTH);
 
         // initialize the layout for the buttons
@@ -93,6 +103,13 @@ public class TicTacToe {
                 });
             }
         }
+
+        // if you press the button you remove all the current panels and open the MainMenu
+        MAINMENU_Button.addActionListener(e -> {
+            frame.getContentPane().removeAll();
+            new MainMenu(frame);
+        });
+
     }
 
     private void checkWinner(){
